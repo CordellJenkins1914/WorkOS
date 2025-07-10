@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Directory: Groups &amp; Members</title>
+</head>
+<body>
+  <h1>Directory Sync: Groups &amp; Members</h1>
+
+  {% for entry in group_list %}
+    <section style="margin-bottom:2rem;">
+      <h2>{{ entry.group.name }}</h2>
+      <ul>
+        {% if entry.members %}
+          {% for u in entry.members %}
+            <li>{{ u.first_name }} {{ u.last_name }} &mdash; {{ u.email }}</li>
+          {% endfor %}
+        {% else %}
+          <li><em>No members in this group</em></li>
+        {% endif %}
+      </ul>
+    </section>
+  {% endfor %}
+
+  <p><a href="{{ url_for('index') }}">← Back to Home</a></p>
+</body>
+</html>

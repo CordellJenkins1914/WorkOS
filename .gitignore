@@ -1,0 +1,21 @@
+# Virtualenv / venv
+venv/
+.env
+
+# ignore stray venv-like folders
+and/
+source/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Editor/IDE settings
+.vscode/
+*.suo
+*.user
+*.swp
+
+# macOS
+.DS_Store
